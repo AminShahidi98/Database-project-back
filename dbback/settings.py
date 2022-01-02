@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'cameras', #An app that me(Amin) created.
     'users', #An app that me(Amin) created.
     'django.contrib.admin',
     'django.contrib.auth',
