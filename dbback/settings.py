@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'users', #An app that me(Amin) created.
+    'maintenances', #An app that me(Amin) created.
     'cameras', #An app that me(Amin) created.
     'headquarters', #An app that me(Amin) created.
     'django.contrib.admin',
