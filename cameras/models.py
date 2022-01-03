@@ -13,18 +13,18 @@ class Camera(models.Model):
     Range = models.CharField(max_length=20, blank=False, null=False)
 
     def __str__(self):
-        return "Camera" + ' ' + self.CID + ' ' + self.Model
+        return "Camera" + ' ' + str(self.CID) + ' ' + str(self.Model)
 
 class Fixed_camera(models.Model):
     CameraID = models.ForeignKey(Camera, on_delete=models.CASCADE, blank=False, null=False, unique=True)
     Address = models.CharField(max_length=500, blank=False, null=False)
 
     def __str__(self):
-        return "Fixed_camera" + '-' + self.CameraID.CID
+        return "Fixed_camera" + '-' + str(self.CameraID.CID)
 
 class Moving_camera(models.Model):
     CameraID = models.ForeignKey(Camera, on_delete=models.CASCADE, unique=True)
     Plate = models.CharField(max_length=8, null=False, blank=False)
 
     def __str__(self):
-        return "Moving_camera" + '-' + self.CameraID.CID
+        return "Moving_camera" + '-' + str(self.CameraID.CID)
