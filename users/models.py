@@ -1,4 +1,5 @@
 from django.db import models
+from headquarters.models import *
 
 from django.contrib.auth.models import User
 
@@ -28,7 +29,7 @@ class Staff_tel(models.Model):
 # karkonan technecian
 class Technician_staff(models.Model):
 	StaffID =  models.OneToOneField(Staff_SID, on_delete=models.CASCADE, primary_key=True)
-	Expertise = models.CharField(max_length=50, primary_key=True)
+	Expertise = models.CharField(max_length=50)
 
 # karkonan edari
 class Administrative_staff(models.Model):
