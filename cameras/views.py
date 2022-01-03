@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from .models import *
 from maintenances.models import *
 from django.contrib.auth.models import User
-from .forms import FindCameraServicemansFrom
+from .forms import FindCameraServicemansFrom, FindCamerasServicedByPerson
 # Create your views here.
 
 def cameraServicemans(response, CID):
@@ -50,4 +50,22 @@ def camerasCostsDec(response):
     sortedList = sorted(cameraAndTotalCost, key=lambda tup: tup[1], reverse=True)
     return render(response, "cameras/costs-list.html", {"sortedList":sortedList, "title":"هزینه نگهداری - کاهشی"})
 
-    
+def camerasServicedByPerson(response, StaffID):
+    maintenance1s = Maintenance1.objects.filter(StaffID=StaffID)
+    maintenances = []
+    for m1 in maintenance1s:
+        m2 = Maintenance2.objects.get(MID=m1.MID)
+        maintenances.append((m1,m2))
+    return render(response, "cameras/serviced-by.html", {"maintenances":maintenances})
+
+def findCamerasServicedByPerson(response):
+    if response.method == "POST":
+        form = FindCamerasServicedByPerson(response.POST)    
+        if form.is_valid():
+            StaffID = form.cleaned_data["StaffID"]
+            user = User.objects.get(id=StaffID)
+        return HttpResponseRedirect("/cameras/serviced-by/%s/" %StaffID)
+
+    else:
+        form = FindCamerasServicedByPerson()  
+        return render(response, "cameras/find-cameras-serviced-by.html", {"form":form})
