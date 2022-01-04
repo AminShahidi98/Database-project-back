@@ -24,5 +24,6 @@ urlpatterns = [
 
     path("home/", v.home, name="صفحه اصلی"),
     path("home/", include("users.urls")),
-    path("cameras/", include("cameras.urls"))
+    path("cameras/", include("cameras.urls")),
+    path("cars/", include("cars.urls"))
 ]
