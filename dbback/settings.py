@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'sms', #An app that me(Amin) created.
     'receipts', #An app that me(Amin) created.
     'fines', #An app that me(Amin) created.
+    'cars', #An app that me(Amin) created.
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
