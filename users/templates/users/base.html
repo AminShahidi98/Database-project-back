@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa-IR">
+    
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} سامانه هوشمند تخلفات دوربینی شهر تهران {% endblock %}</title>
+    <style>
+        * {  
+    margin: 0;
+    border: 0;
+    padding: 0;
+    outline: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("el.jpg");
+    background-size: cover;
+}
+
+nav {
+    display: flex;
+    background-color: rgb(46, 46, 46);
+    flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 500px) {
+    nav{
+        flex-direction: column;
+    }
+}
+
+nav a {
+    background-color: rgb(46, 46, 46);
+    font-size: 18px;
+    color: rgb(226, 226, 226);
+    padding: 20px;
+}
+
+.a2:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(226, 226, 226);
+}
+
+.a2:active {
+    color: rgb(255, 255, 255);
+}
+
+.a3:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(226, 226, 226);
+}
+
+.a3:active {
+    color: rgb(255, 255, 255);
+}
+
+.a2 {
+    background-color: rgb(52, 163, 74);
+}
+
+.container {
+    background: #21ff3352;
+    display: flex;
+    top: 0px;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    border-style: solid;
+    border-width: 5px 0px 5px 0px;
+    border-color: rgb(0, 73, 4);
+}
+
+.h1 {
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+
+.tehranlogo {
+    height: 120px;
+    width: 120px;
+    margin: 10px;
+}
+    </style>
+</head>
+
+
+<body>
+    <div class="uppercontainer">
+        <img class="tehranlogo" src="tehranlogo.png" alt="tehran logo">
+        <h1 class="h1">سامانه هوشمند تخلفات دوربینی شهر تهران</h1>
+    </div>
+    <nav>
+        <a class="a2" href="base.html">صفحه اصلی</a>
+        <a class="a3" href="#">ثبت نام</a>
+        <a class="a3" href="#">ورود</a>
+        <a class="a3" href="#">ارتباط با ما</a>
+    </nav>
+    <div id="content", name="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
