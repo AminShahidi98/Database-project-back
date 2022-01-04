@@ -1,7 +1,9 @@
 from django.db import models
+from django.db.models.deletion import CASCADE
 from cameras.models import Camera
 from violations.models import Violation
 from django.utils.timezone import now
+from fines.models import Fine1
 
 # Create your models here.
 class Receipt1(models.Model):

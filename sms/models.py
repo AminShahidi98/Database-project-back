@@ -4,6 +4,7 @@ from django.db.models.expressions import Case
 from django.utils.timezone import now
 from cameras.models import Camera
 from violations.models import Violation
+from fines.models import Fine1
 
 # Create your models here.
 class Sms1(models.Model):
