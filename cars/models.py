@@ -5,12 +5,12 @@ from django.utils.timezone import now
 class Car(models.Model):
     PID = models.CharField(max_length=8, null=False, blank=False, unique=True)
     Type = models.CharField(max_length=10, null=False, blank=False)
-    Model = models.Model(max_length=20, null=False, blank=False)
+    Model = models.CharField(max_length=20, null=False, blank=False)
     Tip = models.CharField(max_length=10, null=False, blank=False)
     ProductionDate = models.DateTimeField(default=now, editable=True, null=False, blank=False)
     Capacity = models.IntegerField(null=False, blank=False)
-    Fuel = models.Model(max_length=20, null=False, blank=False)
-    Color = models.Model(max_length=30, null=False, blank=False)
+    Fuel = models.CharField(max_length=20, null=False, blank=False)
+    Color = models.CharField(max_length=30, null=False, blank=False)
     Room = models.BooleanField()
     def __str__(self):
         return 'Car ' + str(self.PID)
