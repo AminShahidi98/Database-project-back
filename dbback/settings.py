@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'cameras', #An app that me(Amin) created.
     'headquarters', #An app that me(Amin) created.
     'violations', #An app that me(Amin) created.
+    'sms', #An app that me(Amin) created.
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
