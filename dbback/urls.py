@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include, include
+from users import views as v
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("headquarters/", include("headquarters.urls"))
+    path("headquarters/", include("headquarters.urls")),
+    path("home/", v.home, name="صفحه اصلی"),
+    path("home/", include("users.urls"))
 ]
