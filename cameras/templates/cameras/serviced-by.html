@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+    <meta charset="UTF-8">
+    <title>دوربین‌‌های سرویس شده توسط فرد</title>
+    <style>
+        * {  
+    margin: 0;
+    border: 0;
+    padding: 0;
+    outline: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("el.jpg");
+    background-size: cover;
+}
+
+nav {
+    display: flex;
+    background-color: rgb(46, 46, 46);
+    flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 500px) {
+    nav{
+        flex-direction: column;
+    }
+}
+
+nav a {
+    background-color: rgb(46, 46, 46);
+    font-size: 18px;
+    color: rgb(226, 226, 226);
+    padding: 20px;
+}
+
+.a2:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(226, 226, 226);
+}
+
+.a2:active {
+    color: rgb(255, 255, 255);
+}
+
+.a3:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(226, 226, 226);
+}
+
+.a3:active {
+    color: rgb(255, 255, 255);
+}
+
+.a2 {
+    background-color: rgb(52, 163, 74);
+}
+
+.container {
+    background: #21ff3352;
+    top: 50px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    border-style: solid;
+    border-width: 5px 0px 5px 0px;
+    border-color: rgb(0, 73, 4);
+}
+
+.subcontainer {
+    padding: 15px;
+    width: 900px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+}
+
+.item {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    width: 840px;
+    padding: 40px;
+    height: 100px;
+    font-size: 24px;
+    text-align: center;
+    margin: 15px;
+    background: rgb(190, 190, 190);
+    color: rgb(0, 68, 3);
+    font-size: 20;
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a class="a2" href="D:\IUST\DB Lab\Front\index\index.html">صفحه اول</a>
+        <a class="a3" href="#">مشخصات</a>
+        <a class="a3" href="#">ارتباط با ما</a>
+        <a class="a3" href="D:\IUST\DB Lab\Front\user-dashboard\user-dashboard.html">داشبورد</a>
+    </nav>
+    <div class="container">
+        <div class="subcontainer">
+            <div class="item">
+                <h5>شناسه سرویس</h5>
+                <h5>شناسه دوربین</h5>
+                <h5>تاریخ سرویس</h5>
+                <h5>وضعیت بازرسی</h5>
+            </div>
+            {% block content %}
+                {% for i  in maintenances%}
+                <div class="item">
+                    <h5>{{i.0.MID}}</h5>
+                    <h5>{{i.0.CameraID.CID}}</h5>
+                    <h5>{{i.1.ServiceDate}}</h5>
+                    <h5>{{i.1.InspectionStatus}}</h5>
+                </div>
+                {% endfor %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>
