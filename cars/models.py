@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.timezone import now
 
 # Create your models here.
-class car(models.Model):
+class Car(models.Model):
     PID = models.CharField(max_length=8, null=False, blank=False, unique=True)
     Type = models.CharField(max_length=10, null=False, blank=False)
     Model = models.Model(max_length=20, null=False, blank=False)
