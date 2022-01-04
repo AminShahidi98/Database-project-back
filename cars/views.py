@@ -7,7 +7,10 @@ from .forms import FindPersonCarsFrom
 
 # Create your views here.
 def showPersonCars(response, NID):
-    person = Car_owner.objects.get(NID=NID)
+    try:
+        person = Car_owner.objects.get(NID=NID)
+    except Car_owner.DoesNotExist:
+        return render(response, "cars/does-not-exist.html", {"message":"شخص مورد نظر یافت نشد!"})
     ownerships = Ownership.objects.filter(NationalID=person)
     cars = []
     for o in ownerships:
