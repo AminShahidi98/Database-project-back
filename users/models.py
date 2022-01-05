@@ -10,13 +10,13 @@ class Staff_NID(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	NID = models.CharField(max_length=10, primary_key=True)
 	HeadquartersID = models.ForeignKey(Headquarters, on_delete=models.CASCADE)
-	Fathername = models.CharField(max_length=100)
-	Education = models.CharField(max_length=50)
-	Soldiership = models.CharField(max_length=20)
-	BirthDate = models.DateTimeField(auto_now=False)
+	Fathername = models.CharField(default="", blank=True, max_length=100)
+	Education = models.CharField(default="", blank=True, max_length=50)
+	Soldiership = models.CharField(default="", blank=True, max_length=20)
+	BirthDate = models.DateTimeField(auto_now=True)
 	JoinDate = models.DateTimeField(auto_now=True)
-	Address = models.TextField(max_length=500)
-	MaritalStatus = models.CharField(max_length=50)
+	Address = models.TextField(default="", blank=True, max_length=500)
+	MaritalStatus = models.CharField(default="", blank=True, max_length=50)
 
 # karkonan - kode shenasayi
 class Staff_SID(models.Model):

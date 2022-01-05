@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("headquarters/", include("headquarters.urls")),
 
-    path("home/", v.home, name="صفحه اصلی"),
-    path("home/", include("users.urls")),
+    path("home/", v.home, name="home"),
+    path("", include("users.urls")),
     path("cameras/", include("cameras.urls"))
 ]
