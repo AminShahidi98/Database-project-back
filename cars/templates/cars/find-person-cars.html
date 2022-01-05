@@ -1,4 +1,10 @@
-* {  
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+    <meta charset="UTF-8">
+    <title>جست و جو خودروهای شخص</title>
+    <style>
+        * {  
     margin: 0;
     border: 0;
     padding: 0;
@@ -74,7 +80,7 @@ nav a {
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    background: rgb(255, 255, 255);
+    background: rgb(177, 177, 177);
 }
 
 .item {
@@ -92,3 +98,26 @@ nav a {
     color: rgb(0, 68, 3);
     font-size: 20;
 }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a class="a2" href="D:\IUST\DB Lab\Front\index\index.html">صفحه اول</a>
+        <a class="a3" href="#">مشخصات</a>
+        <a class="a3" href="#">ارتباط با ما</a>
+        <a class="a3" href="D:\IUST\DB Lab\Front\user-dashboard\user-dashboard.html">داشبورد</a>
+    </nav>
+    <div class="container">
+        <div class="subcontainer">
+            {% block find-person-cars %}
+                <form method="post" action="/cars/find-person-cars/">
+                    {% csrf_token %}
+                    {{form}}
+                    <button type="submit", name="save">بگرد</button>
+                </form>
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

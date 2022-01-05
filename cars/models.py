@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.deletion import CASCADE
 from django.utils.timezone import now
 
 # Create your models here.
@@ -17,7 +18,7 @@ class Car(models.Model):
 
 class Car_motor(models.Model):
     CMID = models.IntegerField(null=False, blank=False, unique=True)
-    CarID = models.CharField(max_length=8, null=False, blank=False)
+    CarID = models.ForeignKey(Car, on_delete=CASCADE)
     def __str__(self):
         return 'Car_motor ' + str(self.CMID) 
     class Meta:
@@ -25,7 +26,7 @@ class Car_motor(models.Model):
 
 class Car_chassis(models.Model):
     CCID = models.IntegerField(null=False, blank=False, unique=True)
-    CarID = models.CharField(max_length=8, null=False, blank=False)
+    CarID = models.ForeignKey(Car, on_delete=CASCADE)
     def __str__(self):
         return 'Car_chassis ' + str(self.CCID) 
     class Meta:

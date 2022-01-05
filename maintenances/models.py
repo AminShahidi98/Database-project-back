@@ -3,11 +3,12 @@ from django.db.models.fields import IntegerField
 from django.conf import settings
 from cameras.models import Camera
 from django.utils.timezone import now
+from users.models import Staff_SID
 
 # Create your models here.
 class Maintenance1(models.Model):
     MID = models.IntegerField(blank=False, null=False)
-    StaffID = models.ForeignKey(settings.AUTH_USER_MODEL, null=False, blank=False, on_delete=models.CASCADE)
+    StaffID = models.ForeignKey(Staff_SID, null=False, blank=False, on_delete=models.CASCADE)
     CameraID = models.ForeignKey(Camera, null=False, blank=False, on_delete=models.CASCADE)
     def __str__(self):
         return 'Maintenance1 ' + str(self.MID) 

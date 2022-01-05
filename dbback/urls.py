@@ -22,7 +22,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("headquarters/", include("headquarters.urls")),
 
+
     path("home/", v.home, name="home"),
     path("", include("users.urls")),
-    path("cameras/", include("cameras.urls"))
+    path("cameras/", include("cameras.urls")),
+    path("cars/", include("cars.urls")),
+    path("violations/", include("violations.urls")),
+
 ]

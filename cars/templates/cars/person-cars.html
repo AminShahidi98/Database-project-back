@@ -2,7 +2,7 @@
 <html dir="rtl" lang="fa-IR">
 <head>
     <meta charset="UTF-8">
-    <title>مسئولان سرویس و نگهداری</title>
+    <title>خودروهای شخص</title>
     <style>
         * {  
     margin: 0;
@@ -111,16 +111,18 @@ nav a {
     <div class="container">
         <div class="subcontainer">
             <div class="item">
-                <h5>شناسه سرویس</h5>
-                <h5>شناسه مسئول</h5>
-                <h5>شناسه دوربین</h5>
+                <h6>پلاک</h6>
+                <h6>نوع</h6>
+                <h6>مدل</h6>
+                <h6>رنگ</h6>
             </div>
-            {% block serviceman-item %}
-                {% for i  in maintenance1s%}
+            {% block carlist %}
+                {% for c  in cars%}
                 <div class="item">
-                    <h3>{{i.MID}}</h3>
-                    <h5>{{i.StaffID.SID}}</h5>
-                    <h5>{{i.CameraID.CID}}</h5>
+                    <h6>{{c.PID}}</h6>
+                    <h6>{{c.Type}}</h6>
+                    <h6>{{c.Model}}</h6>
+                    <h6>{{c.Color}}</h6>
                 </div>
                 {% endfor %}
             {% endblock %}

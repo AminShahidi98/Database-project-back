@@ -50,7 +50,7 @@ class Car_owner(models.Model):
         return 'Car_owner ' + str(self.NID)
 
 class Ownership(models.Model):
-    NationalID = models.CharField(max_length=10)
+    NationalID = models.ForeignKey(Car_owner, on_delete=CASCADE)
     CarID = models.ForeignKey(Car, on_delete=CASCADE)
     def __str__(self):
         return 'Ownership ' + str(self.NationalID)  + ' ' + str(self.CarID)
