@@ -103,9 +103,9 @@
     <nav>
         <a class="a2" href="{% url 'users:home' %}">صفحه اصلی</a>
         <a class="a3" href="{% url 'users:signup' %}">ثبت نام کارمندان</a>
-        <a class="a3" href="#">ثبت نام مالکان خودرو</a>
+        <a class="a3" href="{% url 'users:citizen-signup' %}">ثبت نام مالکان خودرو</a>
         <a class="a3" href="{% url 'users:login' %}">ورود کارمندان</a>
-        <a class="a3" href="#">ورود مالکان خودرو</a>
+        <a class="a3" href="{% url 'users:citizen-login' %}">ورود مالکان خودرو</a>
         <a class="a3" href="#">ارتباط با ما</a>
     </nav>
 </body>

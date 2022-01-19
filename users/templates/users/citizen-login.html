@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     {% load static %}
-    <title>ورود کارمندان</title>
+    <title>ورود مالکان خودرو</title>
 
     <style>
         * {  
@@ -205,8 +205,8 @@
         <a class="a3" href="{% url 'users:home' %}">صفحه اصلی</a>
         <a class="a3" href="{% url 'users:signup' %}">ثبت نام کارمندان</a>
         <a class="a3" href="{% url 'users:citizen-signup' %}">ثبت نام مالکان خودرو</a>
-        <a class="a2" href="{% url 'users:login' %}">ورود کارمندان</a>
-        <a class="a3" href="{% url 'users:citizen-login' %}">ورود مالکان خودرو</a>
+        <a class="a3" href="{% url 'users:login' %}">ورود کارمندان</a>
+        <a class="a2" href="{% url 'users:citizen-login' %}">ورود مالکان خودرو</a>
         <a class="a3" href="#">ارتباط با ما</a>
     </nav>
 
@@ -219,9 +219,9 @@
                 <div class="centersubcontainer">
 
                     <div class="box"><br>
-                        <h3 class="hrlogin">ورود کارمندان</h3><br><br>
+                        <h3 class="hrlogin">ورود مالکان خودرو</h3><br><br>
 
-                        <form action="{% url 'users:login' %}" method="post">
+                        <form action="{% url 'users:citizen-login' %}" method="post">
                                 {% csrf_token %}
                                     <label>نام کاربری</label>
                                     {{ login_form.username }}<br><br>

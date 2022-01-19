@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     {% load static %}
-    <title>داشبورد کارمند</title>
+    <title>داشبورد مالک خودرو</title>
     <style>
         * {  
             margin: 0;
@@ -126,7 +126,7 @@
 <body>
     <nav>
         <a class="a3" href="{% url 'users:home' %}">صفحه اصلی</a>
-        <a class="a2" href="{% url 'users:staff-dashboard' %}">حساب کاربری</a>
+        <a class="a2" href="{% url 'users:citizen-dashboard' %}">حساب کاربری</a>
         <a class="a3" href="#">ویرایش اطلاعات</a>
         <a class="a3" href="#">ارتباط با ما</a>
     </nav>
@@ -134,21 +134,21 @@
         <div class="subcontainer">
             <div class="queryrow">
 
-                    <a class="optionlink" href="http://127.0.0.1:8000/cameras/costs-list-asc/">لیست کردن تمام دوربین‌ها بر اساس هزینه صرف شده برای سرویس آن‌ها (صعودی)</a>
+                    <a class="optionlink" href="http://127.0.0.1:8000/violations/list-asc/">لیست تمام تخلفات با توجه به مبلغ آن‌ها (صعودی)</a>
 
-                    <a class="optionlink" href="http://127.0.0.1:8000/cameras/costs-list-dec/">لیست کردن تمام دوربین‌ها بر اساس هزینه صرف شده برای سرویس آن‌ها (نزولی)</a>
-
-            </div>
-            <div class="queryrow">
-
-                    <a class="optionlink" href="http://127.0.0.1:8000/cameras/servicemans/find/">پیدا کردن افرادی که یک دوربین خاص را سرویس کرده‌اند</a>
-
-                    <a class="optionlink" href="http://127.0.0.1:8000/cars/debtor-list-dec/">لیست کردن تمام وسایل نقلیه بر اساس میزان بدهی پرداخت نشده (نزولی)</a>
+                    <a class="optionlink" href="http://127.0.0.1:8000/violations/list-dec/">لیست تمام تخلفات با توجه به مبلغ آن‌ها (نزولی)</a>
 
             </div>
             <div class="queryrow">
 
-                    <a class="optionlink" href="http://127.0.0.1:8000/cameras/serviced-by/find/person/">پیدا کردن دوربین‌هایی که توسط یک فرد خاص بازرسی شده اند</a>
+                    <a class="optionlink" href="http://127.0.0.1:8000/cars/find-person-cars/">یافتن تمام خودروهای فرد</a>
+
+                    <a class="optionlink" href="http://127.0.0.1:8000/receipts/find-receipts">پیدا کردن رسید پرداخت یک جریمه خاص</a>
+
+            </div>
+            <div class="queryrow">
+
+                    <a class="optionlink" href="#"></a>
 
 
                     <a class="optionlink" href="#">#</a>

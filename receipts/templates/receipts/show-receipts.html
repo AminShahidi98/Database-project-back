@@ -2,7 +2,7 @@
 <html dir="rtl" lang="fa-IR">
 <head>
     <meta charset="UTF-8">
-    <title>{{title}}</title>
+    <title>رسیدهای پرداخت</title>
     <style>
         * {  
     margin: 0;
@@ -111,18 +111,18 @@ nav a {
     <div class="container">
         <div class="subcontainer">
             <div class="item">
-                <h6>شناسه</h6>
-                <h6>مبلغ به ریال</h6>
-                <h6>نمره منفی</h6>
-                <h6>توضیحات</h6>
+                <h6>پذیرنده</h6>
+                <h6>پرداخت کننده</h6>
+                <h6>کد شعبه</h6>
+                <h6>زمان پرداخت</h6>
             </div>
-            {% block violation-items %}
-                {% for v in violations %}
+            {% block receiptsList %}
+                {% for i in receiptsLists%}
                 <div class="item">
-                    <h6>{{v.VID}}</h6>
-                    <h6>{{v.Amount}}</h6>
-                    <h6>{{v.NegativePoint}}</h6>
-                    <p>{{v.Description}}</p>
+                    <h6>{{i.AccNum}}</h6>
+                    <h6>{{i.PayNum}}</h6>
+                    <h6>{{i.Branch}}</h6>
+                    <h6>{{i.PaymentDate}}</h6>
                 </div>
                 {% endfor %}
             {% endblock %}
