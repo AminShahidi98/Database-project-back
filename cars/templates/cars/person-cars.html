@@ -14,7 +14,7 @@
 }
 
 body {
-    background-image: url("el.jpg");
+    background-image: url("/static/el.jpg");
     background-size: cover;
 }
 
@@ -103,10 +103,10 @@ nav a {
 </head>
 <body>
     <nav>
-        <a class="a2" href="D:\IUST\DB Lab\Front\index\index.html">صفحه اول</a>
-        <a class="a3" href="#">مشخصات</a>
+        <a class="a3" href="{% url 'users:home' %}">صفحه اصلی</a>
+        <a class="a3" href="{% url 'users:citizen-dashboard' %}">حساب کاربری</a>
+        <a class="a3" href="#">ویرایش اطلاعات</a>
         <a class="a3" href="#">ارتباط با ما</a>
-        <a class="a3" href="D:\IUST\DB Lab\Front\user-dashboard\user-dashboard.html">داشبورد</a>
     </nav>
     <div class="container">
         <div class="subcontainer">

@@ -103,26 +103,22 @@ nav a {
 </head>
 <body>
     <nav>
-        <a class="a3" href="{% url 'users:home' %}">صفحه اصلی</a>
-        <a class="a3" href="{% url 'users:citizen-dashboard' %}">حساب کاربری</a>
+        <a class="a3" href="#">صفحه اصلی</a>
+        <a class="a2" href="#">حساب کاربری</a>
         <a class="a3" href="#">ویرایش اطلاعات</a>
         <a class="a3" href="#">ارتباط با ما</a>
     </nav>
     <div class="container">
         <div class="subcontainer">
             <div class="item">
-                <h6>شناسه</h6>
-                <h6>مبلغ به ریال</h6>
-                <h6>نمره منفی</h6>
-                <h6>توضیحات</h6>
+                <h5>پلاک خودرو</h5>
+                <h5>مجموع بدهی</h5>
             </div>
-            {% block violation-items %}
-                {% for v in violations %}
+            {% block debtor-cars %}
+                {% for i in sortedList %}
                 <div class="item">
-                    <h6>{{v.VID}}</h6>
-                    <h6>{{v.Amount}}</h6>
-                    <h6>{{v.NegativePoint}}</h6>
-                    <p>{{v.Description}}</p>
+                    <h3>{{i.0.PID}}</h3>
+                    <h5>{{i.1}}</h5>
                 </div>
                 {% endfor %}
             {% endblock %}

@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE
 from cars.models import Car
 from django.utils.timezone import now
+from datetime import date
 
 # karkonan - kode meli
 class Staff_NID(models.Model):
@@ -13,8 +14,8 @@ class Staff_NID(models.Model):
 	Fathername = models.CharField(default="", blank=True, max_length=100)
 	Education = models.CharField(default="", blank=True, max_length=50)
 	Soldiership = models.CharField(default="", blank=True, max_length=20)
-	BirthDate = models.DateTimeField(auto_now=True)
-	JoinDate = models.DateTimeField(auto_now=True)
+	BirthDate = models.DateField(default=date.today, editable=True, blank=True)
+	JoinDate = models.DateTimeField(default=now, editable=True, blank=True)
 	Address = models.TextField(default="", blank=True, max_length=500)
 	MaritalStatus = models.CharField(default="", blank=True, max_length=50)
 

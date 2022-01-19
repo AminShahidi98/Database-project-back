@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     {% load static %}
-    <title>ورود کارمندان</title>
+    <title>ثبت نام مالکان خودرو</title>
 
     <style>
         * {  
@@ -111,7 +111,7 @@
             text-align: center;
             justify-content: center;
             padding: 5px;
-            width: 430px;
+            width: 550px;
             height: 470px;
             margin-right: auto;
             margin-left: auto;
@@ -137,7 +137,7 @@
 
         /* forms styles */
         .box {
-            width: 420px;
+            width: 550px;
             height: auto;
             padding: 20px;
             background-color: rgb(255, 255, 255);
@@ -157,13 +157,6 @@
         }
 
         .button {
-            /* font-weight: bold;
-            position: relative;
-            left: 0%;
-            top: 70%;
-            transform: translate(-50%, 30%);
-            background: rgb(0, 170, 9);
-            color: #fff; */
             display: inline-block;
             padding: 10px 24px;
             font-size: 10px;
@@ -186,7 +179,7 @@
             transform: translateY(4px);
         }
 
-        .hrlogin {
+        .hregister {
             padding: 4px;
             border-radius: 5px;
             background-color: rgb(204, 204, 204);
@@ -204,8 +197,8 @@
     <nav>
         <a class="a3" href="{% url 'users:home' %}">صفحه اصلی</a>
         <a class="a3" href="{% url 'users:signup' %}">ثبت نام کارمندان</a>
-        <a class="a3" href="{% url 'users:citizen-signup' %}">ثبت نام مالکان خودرو</a>
-        <a class="a2" href="{% url 'users:login' %}">ورود کارمندان</a>
+        <a class="a2" href="{% url 'users:citizen-signup' %}">ثبت نام مالکان خودرو</a>
+        <a class="a3" href="{% url 'users:login' %}">ورود کارمندان</a>
         <a class="a3" href="{% url 'users:citizen-login' %}">ورود مالکان خودرو</a>
         <a class="a3" href="#">ارتباط با ما</a>
     </nav>
@@ -219,15 +212,34 @@
                 <div class="centersubcontainer">
 
                     <div class="box"><br>
-                        <h3 class="hrlogin">ورود کارمندان</h3><br><br>
+                        <h3 class="hregister">ثبت نام مالکان خودرو</h3><br><br>
 
-                        <form action="{% url 'users:login' %}" method="post">
+                        <form action="{% url 'users:citizen-signup' %}" method="post">
                                 {% csrf_token %}
-                                    <label>نام کاربری</label>
-                                    {{ login_form.username }}<br><br>
-                                    <label>رمز عبور</label>
-                                    {{ login_form.password }}<br><br><br>
-                                    <button type="submit" name="save" class="button">ورود</button>
+
+                                    <div class="rightside" style="float:right;">
+                                        <label>نام</label>
+                                        {{ user_form.first_name }}<br><br>
+                                        <label>نام خانوادگی</label>
+                                        {{ user_form.last_name }}<br><br>
+                                        <label>شماره ملی</label>
+                                        {{ citizen_form.NID }}<br><br>
+                                        <label>تلفن همراه</label>
+                                        {{ citizen_form.MobilePhone }}<br><br>
+                                        <label>جنسیت</label>
+                                        {{ citizen_form.Sex }}
+                                    </div>
+
+                                    <div class="lefttside" style="float:left;">
+                                        <label>نام کاربری</label>
+                                        {{ user_form.username }}<br><br>
+                                        <label>رمز عبور</label>
+                                        {{ user_form.password1 }}<br><br>
+                                        <label>تکرار رمز عبور</label>
+                                        {{ user_form.password2 }}<br><br>
+
+                                    </div>
+                                    <button type="submit" name="save" class="button">ثبت نام</button>
                         </form>
 
                     </div>

@@ -2,7 +2,7 @@
 <html dir="rtl" lang="fa-IR">
 <head>
     <meta charset="UTF-8">
-    <title>{{title}}</title>
+    <title>پیدا نشد</title>
     <style>
         * {  
     margin: 0;
@@ -14,7 +14,7 @@
 }
 
 body {
-    background-image: url("/static/el.jpg");
+    background-image: url("el.jpg");
     background-size: cover;
 }
 
@@ -80,7 +80,7 @@ nav a {
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    background: rgb(255, 255, 255);
+    background: rgb(177, 177, 177);
 }
 
 .item {
@@ -110,21 +110,8 @@ nav a {
     </nav>
     <div class="container">
         <div class="subcontainer">
-            <div class="item">
-                <h6>شناسه</h6>
-                <h6>مبلغ به ریال</h6>
-                <h6>نمره منفی</h6>
-                <h6>توضیحات</h6>
-            </div>
-            {% block violation-items %}
-                {% for v in violations %}
-                <div class="item">
-                    <h6>{{v.VID}}</h6>
-                    <h6>{{v.Amount}}</h6>
-                    <h6>{{v.NegativePoint}}</h6>
-                    <p>{{v.Description}}</p>
-                </div>
-                {% endfor %}
+            {% block find-receipts %}
+                {{message}}
             {% endblock %}
         </div>
     </div>
